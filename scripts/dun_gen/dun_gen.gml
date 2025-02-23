@@ -7,8 +7,15 @@ function dunflr(index) constructor{
 	exit_found = false;
 	second_exit_found = false;
 	exit_leads_to = noone;
+	exit_x = -1;
+	exit_y = -1;
+	entrance_x = 0;
+	entrance_y = 0;
 	wid = array_length(map_layout[0]);
 	hei = array_length(map_layout);
+	//fill rooms with details
+	
+	
 	//debug
 	wid =3
 	hei = 6;
@@ -30,4 +37,8 @@ function mark_exploration_start(index,mp){
 		default: me = [[4,2,2],[5,5,1],[5,0,0],[0,0,5],[5,0,5],[5,0,0]]; break;
 	}
 	return me;
+}
+
+function fill_rooms(index) {
+	
 }
