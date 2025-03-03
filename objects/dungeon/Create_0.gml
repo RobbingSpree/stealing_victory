@@ -7,11 +7,29 @@ current_floor = 0;
 
 unit = 36;
 
+stamina = 20;
+
+steps = [];
+//the steps is a series of dpad like movement that the player records
+//the player plots out a path and then can automatically follow it when in the dungeon
+//can mark down points of interest where you want the exploration to stop
+//exploration will also stop on any room that's not been explored yet or has an unexplored adjacent room
+
 player_x = -1;
 player_y = -1;
 
 entrance_x = 0;
 entrance_y = 0;
+
+expl_mode = "plan";
+//other modes:
+/*
+plan
+move
+halt
+choice
+fight
+*/
 
 enum room_cats {
 undiscovered,
