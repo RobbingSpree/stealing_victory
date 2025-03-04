@@ -15,8 +15,8 @@ steps = [];
 //can mark down points of interest where you want the exploration to stop
 //exploration will also stop on any room that's not been explored yet or has an unexplored adjacent room
 
-player_x = -1;
-player_y = -1;
+player_x = 0;
+player_y = 0;
 
 entrance_x = 0;
 entrance_y = 0;
