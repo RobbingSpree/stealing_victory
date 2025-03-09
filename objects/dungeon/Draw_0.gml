@@ -16,27 +16,36 @@ for (var i=0; i<dungeon_floors[current_floor].wid; i++) {
 			 //draw_known_room_debug(cel,i,k);
 			if cel & 0b0001 { //right 
 				draw_sprite_ext(dungeon_layout_spr,0,x+i*unit,y+k*unit,1,1,270,c_white,1);
-				draw_sprite(dungeon_arrow_spr,0,x+100,y);
 			} else
 				draw_sprite_ext(dungeon_layout_spr,1,x+i*unit,y+k*unit,1,1,270,c_white,1);
 			if cel & 0b0010 { //left
 				draw_sprite_ext(dungeon_layout_spr,0,x+i*unit,y+k*unit,1,1,90,c_white,1);
-				draw_sprite(dungeon_arrow_spr,1,x+100,y);
 			} else
 				draw_sprite_ext(dungeon_layout_spr,1,x+i*unit,y+k*unit,1,1,90,c_white,1);
 			if cel & 0b0100 { //down
 				draw_sprite_ext(dungeon_layout_spr,0,x+i*unit,y+k*unit,1,1,180,c_white,1);
-				draw_sprite(dungeon_arrow_spr,2,x+100,y);
 			} else
 				draw_sprite_ext(dungeon_layout_spr,1,x+i*unit,y+k*unit,1,1,180,c_white,1);
 			if cel & 0b1000 { //up
 				draw_sprite_ext(dungeon_layout_spr,0,x+i*unit,y+k*unit,1,1,0,c_white,1);
-				draw_sprite(dungeon_arrow_spr,3,x+100,y);
 			} else
 				draw_sprite_ext(dungeon_layout_spr,1,x+i*unit,y+k*unit,1,1,0,c_white,1);
 		}
 	}
 }
+
+var cel = dungeon_floors[current_floor].map_layout[player_y,player_x];
+if cel & 0b0001
+	draw_sprite(dungeon_arrow_spr,0,x+120,y);
+
+if cel & 0b0010
+	draw_sprite(dungeon_arrow_spr,1,x+120,y);
+
+if cel & 0b0100
+	draw_sprite(dungeon_arrow_spr,2,x+120,y);
+
+if cel & 0b1000
+	draw_sprite(dungeon_arrow_spr,3,x+120,y);
 
 /*
 function draw_known_room(cel,i,k) {
